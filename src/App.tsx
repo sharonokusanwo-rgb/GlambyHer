@@ -1,13 +1,18 @@
-import { useState } from 'react'
-import SplashScreen from "./components/splashScreen";
-
-import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SplashScreen from "./components/SplashScreen";
+import LoginScreen from "./auth/login";
+import "./App.css";
 
 function App() {
-  return(
-   <splashScreen/>
-  )
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SplashScreen />} />
+        <Route path="/login" element={<LoginScreen />} />
+        
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-
-export default App
+export default App;
